@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import FontAwesome_swift
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var lblMapMarker: UILabel!
+    @IBOutlet weak var btnIcon: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        lblMapMarker.font = UIFont.fontAwesomeOfSize(17)
+        lblMapMarker.text = String.fontAwesomeIconWithName(FontAwesome.MapMarker)
+        
+        btnIcon.titleLabel?.font = UIFont.fontAwesomeOfSize(17)
+        btnIcon.setTitle(String.fontAwesomeIconWithName(.Map) + " 文字列と連結することもできます。", forState: .Normal)
     }
 
     override func didReceiveMemoryWarning() {
